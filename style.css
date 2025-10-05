@@ -1,0 +1,206 @@
+* {
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+body {
+  background: radial-gradient(circle at center, #0b0b0b, #1a1a1a);
+  color: #fff;
+  font-family: "Lato", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2.2rem;
+  text-align: center;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  margin-top: 20px;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.boxed {
+  position: relative;
+  padding-top: 33.3333%;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(6px);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.boxed:hover {
+  background: rgba(0, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.hd-bt {
+  border-top: none;
+}
+
+.hd-br {
+  border-right: none;
+}
+
+.hd-bb {
+  border-bottom: none;
+}
+
+.hd-bl {
+  border-left: none;
+}
+
+.cross,
+.crossE {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 25%;
+  left: 25%;
+}
+
+.cross:before,
+.cross:after,
+.crossE:before,
+.crossE:after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 5px;
+  background-color: #ff0055;
+  border-radius: 2px;
+}
+
+.cross:before,
+.crossE:before {
+  transform: rotate(45deg);
+}
+
+.cross:after,
+.crossE:after {
+  transform: rotate(-45deg);
+}
+
+.crossE:before,
+.crossE:after {
+  background-color: #0ff;
+  box-shadow: 0 0 10px #0ff;
+}
+
+.circle {
+  position: absolute;
+  height: 60%;
+  width: 60%;
+  top: 20%;
+  left: 20%;
+  border: 5px solid #00e0ff;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #00e0ff;
+}
+
+div[id^="cr"],
+div[id^="ci"] {
+  display: none;
+}
+
+.sboard {
+  padding: 10px;
+}
+
+.score1,
+.score2 {
+  text-align: center;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  padding-bottom: 5px;
+}
+
+.player {
+  background: linear-gradient(90deg, #00ffff, #0077ff);
+  color: #000;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 6px;
+  border-radius: 10px 10px 0 0;
+  letter-spacing: 1px;
+}
+
+.sp {
+  font-size: 2.8em;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+#p2 {
+  opacity: 0.6;
+}
+
+.btn {
+  position: relative;
+  text-align: center;
+  border-radius: 8px;
+  border: 2px solid #00ffff;
+  background: transparent;
+  color: #00ffff;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+  margin: 30px auto;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #00ffff;
+  color: #000;
+  box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+  transform: translateY(-3px);
+}
+
+.score-on-sm .player {
+  background: linear-gradient(90deg, #00ffff, #0077ff);
+  border-radius: 10px;
+  padding: 5px 10px;
+  color: #000;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.score-on-sm .player span {
+  color: #fff;
+}
+
+.score-on-sm .score1,
+.score-on-sm .score2 {
+  border-bottom: none;
+  width: auto;
+  font-size: 14px;
+}
+
+.score-on-sm div span {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.change {
+  animation: blink 0.8s infinite alternate;
+}
